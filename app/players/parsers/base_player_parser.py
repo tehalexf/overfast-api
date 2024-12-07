@@ -31,7 +31,7 @@ class BasePlayerParser(HTMLParser):
         """Main parsing method for player profile routes"""
 
         # Check if we have up-to-date data in the Player Cache
-        logger.info("Retrieving Player Summary...")
+        logger.info("Retrieving Player Summary ...")
         self.player_data["summary"] = await self.__retrieve_player_summary_data()
 
         # If the player doesn't exist, summary will be empty, raise associated error
