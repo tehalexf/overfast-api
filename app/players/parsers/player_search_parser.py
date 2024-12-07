@@ -24,6 +24,7 @@ class PlayerSearchParser(JSONParser):
     def get_blizzard_url(self, **kwargs) -> str:
         """URL used when requesting data to Blizzard."""
         search_name = kwargs.get("name").replace("#", "%23")
+        logger.info("Searching for player %s", search_name)
         return f"{super().get_blizzard_url(**kwargs)}/{search_name}/"
 
     def parse_data(self) -> dict:
