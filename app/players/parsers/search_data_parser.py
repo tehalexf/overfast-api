@@ -48,7 +48,7 @@ class SearchDataParser(JSONParser, ABC):
         return {self.data_type: data_value}
 
     def get_blizzard_url(self, **kwargs) -> str:
-        player_name = kwargs.get("player_id").split("-")[0]
+        player_name = kwargs.get("player_id").replace("-", "%23")
         return f"{super().get_blizzard_url(**kwargs)}/{player_name}/"
 
     def retrieve_data_value(self, player_data: dict) -> str | None:
