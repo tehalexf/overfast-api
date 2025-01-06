@@ -72,6 +72,7 @@ def transform_search_data(
                 return data_value["icon"]
 
             case SearchDataType.TITLE:
+                print(data_value)
                 return data_value["name"]["en_US"]
 
     return {
